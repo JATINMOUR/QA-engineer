@@ -1,0 +1,199 @@
+{
+  "info": {
+    "_postman_id": "5380c54f-0ebc-44d2-b20f-a724365da1b8",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57958383",
+    "_collection_link": "https://go.postman.co/collection/57958383-5380c54f-0ebc-44d2-b20f-a724365da1b8?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "FieldForceConnect API Testing",
+      "item": [
+        {
+          "name": "POST - Valid Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/account/authenticate",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "account",
+                "authenticate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "POST - inValid Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"{{username}}\",\r\n  \"password\": \"{{password}}\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/account/authenticate",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "account",
+                "authenticate"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "New Request",
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "9136332805",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "Jteen@123",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, /"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/CRM/LeadStatus",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "CRM",
+                "LeadStatus"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "test",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  ""
+                ]
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Status code is 200\", function () {\r\n    pm.response.to.have.status(200);\r\n});\r\n\r\npm.test(\"Customer added successfully\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response.Status).to.eql(200);\r\n    pm.expect(response.Message).to.eql(\"Success\");\r\n});\r\n\r\npm.test(\"Customer ID is generated\", function () {\r\n    const response = pm.response.json();\r\n\r\n    pm.expect(response.data.Id).to.exist;\r\n});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "basic",
+              "basic": [
+                {
+                  "key": "username",
+                  "value": "9136332805",
+                  "type": "string"
+                },
+                {
+                  "key": "password",
+                  "value": "Jteen@123",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json, text/plain, */*"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Authorization",
+                "value": "",
+                "disabled": true
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"LeadId\": 0,\r\n  \"IsVisibleToAll\": false,\r\n  \"LeadName\": \"Test Customer Postman\",\r\n  \"RefNo\": \"\",\r\n  \"ReferredBy\": 0,\r\n  \"ContactNo\": \"9999999999\",\r\n  \"Email\": \"testcustomer@example.com\",\r\n  \"CityId\": 0,\r\n  \"CountryId\": 0,\r\n  \"LeadSourceId\": 0,\r\n  \"LeadStageId\": 0,\r\n  \"LeadTypeId\": 0,\r\n  \"LocalityId\": 0,\r\n  \"Latitude\": 19.190403,\r\n  \"Longitude\": 72.819702,\r\n  \"Mobile\": \"9999999999\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{base_url}}/api/CRM/Lead",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "CRM",
+                "Lead"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

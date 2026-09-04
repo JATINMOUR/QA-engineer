@@ -1,0 +1,4 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="FieldForce Connect UI Suite" parallel="false">
+  <test name="Regression"><classes><class name="com.fieldforceconnect.tests.LoginTest"/><class name="com.fieldforceconnect.tests.PunchInTest"/><class name="com.fieldforceconnect.tests.CustomerTest"/></classes></test>
+</suite>
