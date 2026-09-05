@@ -23,18 +23,18 @@ public class PunchInTest extends AuthenticatedTestBase {
                 );
 
 
-        // =========================================
+        
         // STEP 1: Wait for Dashboard
-        // =========================================
+         
 
         wait.until(
                 ExpectedConditions.urlContains("/dashboard")
         );
 
 
-        // =========================================
+         
         // STEP 2: Wait for Punched In card
-        // =========================================
+         
 
         By punchInCard = By.xpath(
                 "//h6[normalize-space()='Punched In']" +
@@ -49,16 +49,16 @@ public class PunchInTest extends AuthenticatedTestBase {
         );
 
 
-        // =========================================
+         
         // STEP 3: Click Punch In card
-        // =========================================
+         
 
         punchCard.click();
 
 
-        // =========================================
+         
         // STEP 4: Wait for Toast / Popup
-        // =========================================
+         
 
         By toastMessage = By.cssSelector(
                 "[role='alert'], [role='status']"
@@ -81,9 +81,9 @@ public class PunchInTest extends AuthenticatedTestBase {
         );
 
 
-        // =========================================
+         
         // STEP 5: Validate Popup
-        // =========================================
+         
 
         Assert.assertFalse(
                 actualMessage.isEmpty(),

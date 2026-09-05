@@ -70,8 +70,7 @@ public void startBrowser() {
     }
 
 
-    // Keep implicit waits disabled. Mixing them with explicit waits makes
-    // Selenium timeouts unpredictable.
+    
     driver.manage().timeouts().implicitlyWait(Duration.ZERO);
 
     driver.manage()

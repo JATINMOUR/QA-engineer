@@ -85,9 +85,6 @@ public void login(
 
     passwordField.sendKeys(secret);
 
-    // The React form disables submit until its client-side validation has
-    // accepted both inputs. Report the validation state without exposing the
-    // password value when a configured credential cannot be submitted.
     WebElement signInButton;
 
     try {
